@@ -3,7 +3,23 @@ var parser = require('./csv-parser.js');
 
 var app = express();
 
+
+/* ===============================================
+  Configure stuff
+=============================================== */
+
 app.use(express.static('public'));
+
+// Configures express to use ejs as its view engine
+app.set('view engine', 'ejs');
+
+
+
+
+
+/* ===============================================
+  Define path for returning raw JSON data
+=============================================== */
 
 app.get('/afgan-data', function(req, res) {
   console.log('#1 - request from browser received.');
@@ -19,6 +35,30 @@ app.get('/afgan-data', function(req, res) {
 });
 
 
+
+
+
+
+
+/* ===============================================
+  Define path for returning HTML via EJS
+=============================================== */
+
+app.get('/afgan-html', function(req, res) {
+
+  var callback = function(outputIsHere) {
+    res.render('data-page', outputIsHere);
+  }
+
+  parser(callback);
+});
+
+
+
+
+/* ===============================================
+  Listen up!
+=============================================== */
 
 app.listen(3096, function() {
   console.log('Listening on port 3096 because it is cool');
