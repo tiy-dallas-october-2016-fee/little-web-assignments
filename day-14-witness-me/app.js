@@ -60,6 +60,10 @@ app.get('/afgan-html', function(req, res) {
   Listen up!
 =============================================== */
 
-app.listen(3096, function() {
+console.log('process.env', process.env);
+
+var port = process.env.PORT || 3096;
+
+app.listen(port, function() {
   console.log('Listening on port 3096 because it is cool');
 });
