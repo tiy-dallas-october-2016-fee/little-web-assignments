@@ -1,0 +1,10 @@
+.alone-box {
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+.container-box {
+  border: solid 1px #000;
+}
