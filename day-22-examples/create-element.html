@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Creating an Element</title>
+    <style>
+      .dude {
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="holder-of-things">
+    </div>
+
+    <script>
+
+      var holderOfThings = document.querySelector('.holder-of-things');
+      var aValue = 'Sally Vacuum';
+      var aClass = 'dude'
+
+      //holderOfThings.innerHTML = '<p class="' + aClass + '">' + aValue + '</p>'; //Fine, but we're not doing this now
+
+      var p = document.createElement('p');
+      p.textContent = aValue;
+      p.classList.add(aClass);
+
+      holderOfThings.appendChild(p);
+
+      var span = document.createElement('span');
+      span.textContent = "<- reporter";
+      p.appendChild(span);
+
+
+    </script>
+
+  </body>
+</html>
