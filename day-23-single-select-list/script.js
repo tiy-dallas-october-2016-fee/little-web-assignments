@@ -21,11 +21,11 @@ list.addEventListener('click', function(evt) {
   //   currentlySelected.classList.remove('selected');
   // }
 
-  if (evt.target.tagName === 'P') {
+  if (evt.target.tagName === 'P') { //clicked on the paragraph
     console.log('selecting item parent!');
     evt.target.parentNode.classList.add('selected');
   }
-  else {
+  else { //clicked on the list item
     console.log('selecting item!');
     evt.target.classList.add('selected');
   }
