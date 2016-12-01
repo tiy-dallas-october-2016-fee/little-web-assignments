@@ -1,0 +1,129 @@
+
+.amazon-button {
+  background-image: url('amazon.png');
+  background-position: -30px -80px;
+  height: 50px;
+  width: 25px;
+}
+
+.amazon-button:hover {
+  background-position: -30px -130px;
+}
+
+
+
+.faces {
+  overflow: auto;
+  padding-left: 0;
+}
+
+.faces li {
+  background-image: url('buttons.png');
+  float: left;
+  height: 25px;
+  list-style-type: none;
+  margin: 10px 0;
+  width: 25px;
+}
+
+.face-1 {
+  background-position: -5px -100px;
+}
+
+.face-2 {
+  background-position: -35px -100px;
+}
+
+.face-3 {
+  background-position: -65px -100px;
+}
+
+.face-4 {
+  background-position: -95px -100px;
+}
+
+
+
+.ken {
+  background-image: url('ken.jpg');
+  height: 80px;
+  width: 66px;
+}
+
+.frame-1 {
+  background-position: 0 -480px;
+}
+
+.frame-2 {
+  background-position: -74px -480px;
+}
+
+.frame-3 {
+  background-position: -144px -480px;
+}
+
+.frame-4 {
+  background-position: -216px -480px;
+}
+
+.frame-5 {
+  background-position: -280px -480px;
+}
+
+
+
+
+
+
+#toggle-me {
+  background-color: yellow;
+  padding: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+
+#growing-div {
+  background-color: blue;
+  color: #FFF;
+}
+
+
+.like-button {
+  background-image: url('facebook.jpg');
+  background-position: -53px -128px;
+  height: 15px;
+  width: 16px;
+}
+
+.david-walsh {
+  background-image: url('david-walsh.jpg');
+  border: solid 1px #000;
+  height: 150px;
+  width: 191.5px;
+}
+
+.david-walsh:hover {
+  background-position: -192px 0;
+}
+
+.monster {
+  background-image: url('monster.png');
+  border: solid 1px black;
+  height: 118px;
+  width: 118px;
+}
+
+.position-1 {
+  background-position: 0 0;
+}
+
+.position-2 {
+  background-position: -118px 0;
+}
+
+.position-3 {
+  background-position: -236px 0;
+}
