@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forms!</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <form action="/post/to/here" method="post">
+      <label for="first-name">First name:
+        <input type="text" name="first-name" />
+      </label>
+
+      <label for="last-name">Last name:
+        <input name="last-name" />
+      </label>
+
+      <label for="bio">Bio:</label>
+      <textarea name="bio"></textarea>
+
+      <select name="career">
+        <option value="1">Dallas Cowboys Cheerleader</option>
+        <option value="2">McDonalds</option>
+        <option value="3">Metropolitan Cafe</option>
+      </select>
+
+      <label>Blond<input type="radio" value="blond" name="hair-color" /></label>
+      <label>Brown<input type="radio" value="brown" name="hair-color" /></label>
+      <label>Black<input type="radio" value="black" name="hair-color" /></label>
+
+      <label>Stuff 1<input type="checkbox" value="blond" name="stuff" /></label>
+      <label>Stuff 2<input type="checkbox" value="brown" name="stuff" /></label>
+      <label>Stuff 3<input type="checkbox" value="black" name="stuff" /></label>
+
+
+
+      <button type="submit">Submit!</button>
+    </form>
+
+
+  </body>
+</html>
