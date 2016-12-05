@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Data Attributes Preview</title>
+    <style>
+      img {
+        max-width: 300px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="things">
+      <img data-img-src="https://s-media-cache-ak0.pinimg.com/originals/56/26/b5/5626b51fe25255d1a74c9e3e10f79677.jpg" src="https://s-media-cache-ak0.pinimg.com/originals/56/26/b5/5626b51fe25255d1a74c9e3e10f79677.jpg" />
+      <img data-img-src="http://assets2.ignimgs.com/2016/02/07/ticklistjpg-c74477_640w.jpg" src="http://assets2.ignimgs.com/2016/02/07/ticklistjpg-c74477_640w.jpg" />
+    </div>
+
+    <script>
+
+      var things = document.querySelector('#things');
+      things.addEventListener('click', function(evt) {
+
+        if (evt.target.tagName == 'IMG') {
+
+          if (evt.target.classList.contains('selected')) {
+            //already selected
+            evt.target.classList.remove('selected');
+            console.log(evt.target.attributes);
+            evt.target.src = evt.target.attributes['data-img-src'].value;
+          }
+          else {
+            evt.target.classList.add('selected');
+            evt.target.src = 'https://openclipart.org/image/2400px/svg_to_png/202732/checkmark.png';
+          }
+
+
+        }
+
+      });
+
+
+
+
+    </script>
+
+  </body>
+</html>
