@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'reset';
+
+
+form {
+  border: solid 1px $border-color;
+  padding: 20px;
+
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+button {
+  display: block;
+  margin: 20px 0;
+}
+
+td {
+  border: solid 1px $border-color;
+  padding: 5px;
+  color: $border-color;
+}
+
+
+nav {
+  background-color: black;
+  overflow: auto;
+  font-size: 0;
+}
+
+nav li {
+  background-color: red;
+  color: #FFF;
+  display: inline;
+  font-size: 16px;
+  width: 25%;
+}
+
+//
+// nav li {
+//   background-color: red;
+//   color: #FFF;
+//   float: left;
+//   padding: 4px 10px 4px 0;
+// }
