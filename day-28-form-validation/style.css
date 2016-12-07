@@ -1,0 +1,9 @@
+input, textarea {
+  display: block;
+  margin: 10px 0;
+}
+
+
+.erroneous {
+  border: solid 1px red;
+}
