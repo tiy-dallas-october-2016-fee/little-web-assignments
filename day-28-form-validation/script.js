@@ -1,11 +1,11 @@
 console.log('hello');
 
 var submitButton = document.querySelector('.submit-button');
+var firstNameInput = document.querySelector('.first-name');
+var lastNameInput = document.querySelector('.last-name');
 
 submitButton.addEventListener('click', function(evt) {
 
-  var firstNameInput = document.querySelector('.first-name');
-  var lastNameInput = document.querySelector('.last-name');
   var bioTextArea = document.querySelector('.bio');
 
   validateHasValue(evt, firstNameInput);
@@ -23,6 +23,28 @@ function validateHasValue(evt, theDomElement) {
   }
 }
 
+function validateRequired(theDomElement) {
+  if (theDomElement.value === '') {
+    theDomElement.classList.add('erroneous');
+  }
+  else {
+    theDomElement.classList.remove('erroneous');
+  }
+}
+
+firstNameInput.addEventListener('focus', function() {
+  console.log('focus');
+})
+
+firstNameInput.addEventListener('blur', function() {
+  console.log('blur!');
+  validateRequired(firstNameInput);
+});
+
+lastNameInput.addEventListener('blur', function() {
+  validateRequired(lastNameInput);
+});
+
 function validateLength(evt, theDomElement) {
   if (theDomElement.value.length < 20) {
     evt.preventDefault();
@@ -32,6 +54,8 @@ function validateLength(evt, theDomElement) {
     theDomElement.classList.remove('erroneous');
   }
 }
+
+
 
 
 var googleLink = document.querySelector('.google-link');
