@@ -3,6 +3,7 @@ console.log('hello');
 var submitButton = document.querySelector('.submit-button');
 var firstNameInput = document.querySelector('.first-name');
 var lastNameInput = document.querySelector('.last-name');
+var postalInput = document.querySelector('.postal-code');
 
 submitButton.addEventListener('click', function(evt) {
 
@@ -11,6 +12,19 @@ submitButton.addEventListener('click', function(evt) {
   validateRequiredAndStopForm(evt, firstNameInput);
   validateRequiredAndStopForm(evt, lastNameInput);
   validateLength(evt, bioTextArea);
+
+  var postalInputValue = postalInput.value;
+  var regex = /\d{5}/;
+  var postalValidationResult = regex.test(postalInputValue);
+  if (postalValidationResult === true) {
+    postalInput.classList.remove('erroneous');
+  }
+  else {
+    postalInput.classList.add('erroneous');
+  }
+
+  console.log('postal validation result', postalValidationResult);
+
 });
 
 function validateRequiredAndStopForm(evt, theDomElement) {
