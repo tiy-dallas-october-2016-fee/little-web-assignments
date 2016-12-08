@@ -15,12 +15,13 @@ submitButton.addEventListener('click', function(evt) {
 
 function validateRequiredAndStopForm(evt, theDomElement) {
   if (theDomElement.value === '') {
-    evt.preventDefault();
-    theDomElement.classList.add('erroneous');
+    stopForm(evt);
   }
-  else {
-    theDomElement.classList.remove('erroneous');
-  }
+  validateRequired(theDomElement);
+}
+
+function stopForm(evt) {
+  evt.preventDefault();
 }
 
 function validateRequired(theDomElement) {
