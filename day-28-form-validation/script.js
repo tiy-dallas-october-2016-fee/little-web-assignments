@@ -4,15 +4,18 @@ var submitButton = document.querySelector('.submit-button');
 var firstNameInput = document.querySelector('.first-name');
 var lastNameInput = document.querySelector('.last-name');
 var postalInput = document.querySelector('.postal-code');
+var bioTextArea = document.querySelector('.bio');
 
 submitButton.addEventListener('click', function(evt) {
-
-  var bioTextArea = document.querySelector('.bio');
 
   validateRequiredAndStopForm(evt, firstNameInput);
   validateRequiredAndStopForm(evt, lastNameInput);
   validateLength(evt, bioTextArea);
+  validateZipCode(evt);
 
+});
+
+function validateZipCode(evt) {
   var postalInputValue = postalInput.value;
   var regex = /\d{5}/;
   var postalValidationResult = regex.test(postalInputValue);
@@ -20,12 +23,10 @@ submitButton.addEventListener('click', function(evt) {
     postalInput.classList.remove('erroneous');
   }
   else {
+    stopForm(evt);
     postalInput.classList.add('erroneous');
   }
-
-  console.log('postal validation result', postalValidationResult);
-
-});
+}
 
 function validateRequiredAndStopForm(evt, theDomElement) {
   if (theDomElement.value === '') {
