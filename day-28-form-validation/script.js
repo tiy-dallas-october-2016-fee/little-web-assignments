@@ -8,12 +8,12 @@ submitButton.addEventListener('click', function(evt) {
 
   var bioTextArea = document.querySelector('.bio');
 
-  validateHasValue(evt, firstNameInput);
-  validateHasValue(evt, lastNameInput);
+  validateRequiredAndStopForm(evt, firstNameInput);
+  validateRequiredAndStopForm(evt, lastNameInput);
   validateLength(evt, bioTextArea);
 });
 
-function validateHasValue(evt, theDomElement) {
+function validateRequiredAndStopForm(evt, theDomElement) {
   if (theDomElement.value === '') {
     evt.preventDefault();
     theDomElement.classList.add('erroneous');
