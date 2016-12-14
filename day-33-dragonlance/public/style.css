@@ -47,37 +47,17 @@ table {
 	border-spacing: 0;
 }
 
-
-.mutant-list {
-	float: left;
-	width: 30%;
+body {
+  font-family: Helvetica, Verdana, sans-serif;
 }
 
-.mutant-list li {
-	border: solid 1px #000;
-	padding: 8px;
+h1 {
+  font-size: 2em;
 }
 
-.display {
-	float: left;
-	padding: 2%;
-	width: 64%;
-}
 
-.display img {
-	max-height: 150px;
-}
 
-.selected {
-	background-color: #000;
-	color: #FFF;
-}
-
-.power-list {
+.character-list li {
+	border: solid 1px black;
 	margin: 20px 0;
-	padding-left: 40px;
-}
-
-.power-list li {
-	list-style-type: disc;
 }

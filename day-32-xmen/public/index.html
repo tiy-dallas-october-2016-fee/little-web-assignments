@@ -15,6 +15,19 @@
     <div class="display">
     </div>
 
+    <script type="text/html" id="character-template">
+      <h2>{{realName}}</h2>
+      <img src="{{imageUrl}}" />
+      <p class="description">{{description}}</p>
+      <h2>Powers</h2>
+      <ul class="power-list">
+        {{#powers}}
+        <li>{{.}}</li>
+        {{/powers}}
+      </ul>
+    </script>
+
+    <script src="mustache.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>

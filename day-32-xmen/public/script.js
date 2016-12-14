@@ -24,6 +24,10 @@ promise.done(function(data) {
   }
 });
 
+var templateTag = document.querySelector('#character-template');
+var templateHtml = templateTag.innerHTML;
+console.log(templateHtml);
+
 mutantList.addEventListener('click', function(evt) {
   console.log(evt.target);
   var attr = evt.target.getAttribute('data-index');
@@ -38,19 +42,12 @@ mutantList.addEventListener('click', function(evt) {
   var mutant = apiData.xmen[attr];
   console.log('the mutant', mutant);
 
+  //This is where I am putting it!
   var displayDiv = document.querySelector('.display');
-  displayDiv.innerHTML = '';
 
-  var h2 = document.createElement('h2');
-  h2.textContent = mutant.realName;
-  displayDiv.appendChild(h2);
+  //I have created HTML!
+  var output = Mustache.render(templateHtml, mutant);
 
-  var img = document.createElement('img');
-  img.src = mutant.imageUrl;
-  displayDiv.appendChild(img);
-
-  var description = document.createElement('p');
-  description.textContent = mutant.description;
-  displayDiv.appendChild(description);
-
+  //I put that html in the page!
+  displayDiv.innerHTML = output;
 });
