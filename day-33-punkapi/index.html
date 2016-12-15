@@ -9,12 +9,16 @@
 
     <h1>Beer</h1>
 
+    <button class="previous-button hidden">previous</button>
+
+    <button class="next-button">next</button>
+
     <ul class="beer-stuff">
     </ul>
 
     <script type="text/html" class="beer-template">
       <li>
-        <div>Attenuation level: {{attenuation_level}}</div>
+        <div>Name: {{name}}</div>
         <ol>
           {{#ingredients.malt}}
           <li>{{name}}</li>
