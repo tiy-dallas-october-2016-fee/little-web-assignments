@@ -1,0 +1,15 @@
+@import "reset";
+
+$themeColor: blue;
+
+h1 {
+  color: $themeColor;
+}
+
+.next, .previous {
+  color: $themeColor;
+}
+
+footer {
+  background-color: $themeColor;
+}
