@@ -45,6 +45,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.blog-post img {
+  width: 200px; }
+
+.blog-post header {
+  border: solid 1px green; }
+
+.blog-post .post-body {
+  border: solid 1px blue; }
+
+.blog-post .related {
+  border: solid 1px red; }
+
 p {
   color: red; }
 
