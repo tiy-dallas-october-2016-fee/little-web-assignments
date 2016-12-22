@@ -1,1 +1,1 @@
-{"version":3,"file":"style.css","sources":["style.scss"],"sourcesContent":["p {\n  color: red;\n}\n"],"names":[],"mappings":"AAAA,AAAA,CAAC,CAAC;EACA,KAAK,EAAE,GAAG,GACX"}
+{"version":3,"file":"style.css","sources":["style.scss"],"sourcesContent":["p {\n  color: red;\n}\n\n.the-class-name {\n  font-size: 3em;\n}\n"],"names":[],"mappings":"AAAA,AAAA,CAAC,CAAC;EACA,KAAK,EAAE,GAAG,GACX;;AAED,AAAA,eAAe,CAAC;EACd,SAAS,EAAE,GAAG,GACf"}

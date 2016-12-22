@@ -10,8 +10,34 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var mountNode = document.querySelector('#some-selector');
 
-var HelloMessage = function (_React$Component) {
-  _inherits(HelloMessage, _React$Component);
+var AnotherComponent = function (_React$Component) {
+  _inherits(AnotherComponent, _React$Component);
+
+  function AnotherComponent() {
+    _classCallCheck(this, AnotherComponent);
+
+    return _possibleConstructorReturn(this, (AnotherComponent.__proto__ || Object.getPrototypeOf(AnotherComponent)).apply(this, arguments));
+  }
+
+  _createClass(AnotherComponent, [{
+    key: 'render',
+    value: function render() {
+      console.log('props', this.props);
+
+      return React.createElement(
+        'div',
+        { className: 'the-class-name' },
+        'You greeting a fellow named ',
+        this.props.name
+      );
+    }
+  }]);
+
+  return AnotherComponent;
+}(React.Component);
+
+var HelloMessage = function (_React$Component2) {
+  _inherits(HelloMessage, _React$Component2);
 
   function HelloMessage() {
     _classCallCheck(this, HelloMessage);
@@ -22,10 +48,19 @@ var HelloMessage = function (_React$Component) {
   _createClass(HelloMessage, [{
     key: 'render',
     value: function render() {
+      var name = 'Johnny';
+
       return React.createElement(
         'div',
         null,
-        'Hello Bob!'
+        React.createElement(
+          'p',
+          null,
+          'Hello ',
+          name,
+          '!'
+        ),
+        React.createElement(AnotherComponent, { name: name })
       );
     }
   }]);
