@@ -1,0 +1,1 @@
+{"version":3,"sources":["other.js"],"names":["console","log"],"mappings":";;AAAAA,QAAQC,GAAR,CAAY,YAAZ","file":"other.js","sourcesContent":["console.log('the other!');\n"]}

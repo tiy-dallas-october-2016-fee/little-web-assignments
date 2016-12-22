@@ -1,5 +1,9 @@
-console.log('I am working!');
+var mountNode = document.querySelector('#some-selector');
 
-var wat = () => {
-  console.log('yo arrow function');
+class HelloMessage extends React.Component {
+  render() {
+    return <div>Hello Bob!</div>;
+  }
 }
+
+ReactDOM.render(<HelloMessage />, mountNode);
