@@ -8,7 +8,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-window.MyPersonApp = window.MyPersonApp || {};
+window.SW = window.SW || {};
 
 (function () {
 
@@ -24,71 +24,29 @@ window.MyPersonApp = window.MyPersonApp || {};
     }
 
     _createClass(AppComponent, [{
-      key: 'divClick',
-      value: function divClick() {
-        console.log('You clicked on that div!');
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        console.log('AppComponent.componentDidMount');
+      }
+    }, {
+      key: 'componentWillUnmount',
+      value: function componentWillUnmount() {
+        console.log('AppComponent.componentWillUnmount');
       }
     }, {
       key: 'render',
       value: function render() {
-        var _this2 = this;
-
-        var data = [{
-          firstName: 'Jane',
-          lastName: 'Doe',
-          age: 35,
-          id: 1
-        }, {
-          firstName: 'Bob',
-          lastName: 'Dole',
-          age: 86,
-          id: 2
-        }, {
-          firstName: 'Stephen',
-          lastName: 'Spielberg',
-          age: 68,
-          id: 3
-        }];
-
-        var myGreeting = 'Hello there!';
-
-        var theListItemComponents = data.map(function (person) {
-          console.log('what is this?', _this2.state);
-          return React.createElement(MyPersonApp.PersonComponent, { key: person.id, firstName: person.firstName, lastName: person.lastName, age: person.age });
-        });
-
-        console.log('what is in that variable?', theListItemComponents);
-
+        console.log('AppComponent.render');
         return React.createElement(
           'div',
-          { className: 'app-component' },
-          React.createElement(
-            'p',
-            { onClick: function onClick() {
-                console.log('hello');
-              } },
-            myGreeting
-          ),
-          React.createElement(
-            'div',
-            { onClick: function onClick() {
-                _this2.divClick();
-              } },
-            'click me as well bro'
-          ),
-          React.createElement(
-            'ul',
-            null,
-            theListItemComponents
-          )
+          null,
+          React.createElement(SW.PlanetListComponent, null)
         );
       }
     }]);
 
     return AppComponent;
   }(React.Component);
-
-  var MyCoolObject = {};
 
   ReactDOM.render(React.createElement(AppComponent, null), mountNode);
 })();

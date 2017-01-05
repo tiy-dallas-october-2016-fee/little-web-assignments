@@ -1,0 +1,27 @@
+@import 'reset';
+
+p {
+  color: red;
+}
+
+
+.planet-list {
+
+  ul {
+    padding: 10px;
+  }
+
+  .planet {
+    border: solid 1px #000;
+    padding: 20px;
+  }
+
+  .characteristics {
+    color: #777;
+    padding: 10px 20px;
+  }
+
+  .on {
+    background-color: yellow;
+  }
+}

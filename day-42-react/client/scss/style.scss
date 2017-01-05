@@ -1,0 +1,22 @@
+@import 'reset';
+
+p {
+  color: red;
+}
+
+
+.app-component {
+  border: solid 1px black;
+}
+
+.lunch-component {
+  margin: 30px 10px;
+
+  ol {
+    padding-left: 40px;
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+}

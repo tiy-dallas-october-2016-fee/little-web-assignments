@@ -11,85 +11,77 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 window.MyPersonApp = window.MyPersonApp || {};
 
 (function () {
+  var PersonComponent = function (_React$Component) {
+    _inherits(PersonComponent, _React$Component);
 
-  var mountNode = document.querySelector('#react-root');
+    function PersonComponent() {
+      _classCallCheck(this, PersonComponent);
 
-  var AppComponent = function (_React$Component) {
-    _inherits(AppComponent, _React$Component);
+      var _this = _possibleConstructorReturn(this, (PersonComponent.__proto__ || Object.getPrototypeOf(PersonComponent)).call(this));
 
-    function AppComponent() {
-      _classCallCheck(this, AppComponent);
+      console.log('firing PersonComponent constructor!');
 
-      return _possibleConstructorReturn(this, (AppComponent.__proto__ || Object.getPrototypeOf(AppComponent)).apply(this, arguments));
+      _this.state = {
+        currentClass: ''
+      };
+      return _this;
     }
 
-    _createClass(AppComponent, [{
-      key: 'divClick',
-      value: function divClick() {
-        console.log('You clicked on that div!');
+    _createClass(PersonComponent, [{
+      key: 'toggle',
+      value: function toggle() {
+
+        //you can get to the current value by using this.state.currentClass
+
+        if (this.state.currentClass === 'on') {
+          this.setState({
+            currentClass: ''
+          });
+        } else {
+          this.setState({
+            currentClass: 'on'
+          });
+        }
       }
     }, {
       key: 'render',
       value: function render() {
         var _this2 = this;
 
-        var data = [{
-          firstName: 'Jane',
-          lastName: 'Doe',
-          age: 35,
-          id: 1
-        }, {
-          firstName: 'Bob',
-          lastName: 'Dole',
-          age: 86,
-          id: 2
-        }, {
-          firstName: 'Stephen',
-          lastName: 'Spielberg',
-          age: 68,
-          id: 3
-        }];
-
-        var myGreeting = 'Hello there!';
-
-        var theListItemComponents = data.map(function (person) {
-          console.log('what is this?', _this2.state);
-          return React.createElement(MyPersonApp.PersonComponent, { key: person.id, firstName: person.firstName, lastName: person.lastName, age: person.age });
-        });
-
-        console.log('what is in that variable?', theListItemComponents);
+        console.log('the props for this component: ', this.props);
 
         return React.createElement(
-          'div',
-          { className: 'app-component' },
+          'li',
+          { className: this.state.currentClass, onClick: function onClick() {
+              _this2.toggle();
+            } },
           React.createElement(
-            'p',
-            { onClick: function onClick() {
-                console.log('hello');
-              } },
-            myGreeting
+            'div',
+            null,
+            'First Name: ',
+            this.props.firstName
           ),
           React.createElement(
             'div',
-            { onClick: function onClick() {
-                _this2.divClick();
-              } },
-            'click me as well bro'
+            null,
+            'Last Name: ',
+            this.props.lastName
           ),
           React.createElement(
-            'ul',
+            'div',
             null,
-            theListItemComponents
+            'Age: ',
+            this.props.age
           )
         );
       }
     }]);
 
-    return AppComponent;
+    return PersonComponent;
   }(React.Component);
 
-  var MyCoolObject = {};
+  var someOtherVariable = 7;
 
-  ReactDOM.render(React.createElement(AppComponent, null), mountNode);
+  MyPersonApp.PersonComponent = PersonComponent;
 })();
-//# sourceMappingURL=script.js.map
+//# sourceMappingURL=person-component.js.map

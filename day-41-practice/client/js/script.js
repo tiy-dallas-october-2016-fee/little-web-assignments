@@ -1,51 +1,8 @@
-
+window.MyPersonApp = window.MyPersonApp || {};
 
 (function() {
 
   var mountNode = document.querySelector('#react-root');
-
-
-  class PersonComponent extends React.Component {
-
-    constructor() {
-      super();
-      console.log('firing PersonComponent constructor!');
-
-      this.state = {
-        currentClass: ''
-      };
-    }
-
-    toggle() {
-
-      //you can get to the current value by using this.state.currentClass
-
-      if (this.state.currentClass === 'on') {
-        this.setState({
-          currentClass: ''
-        });
-      }
-      else {
-        this.setState({
-          currentClass: 'on'
-        });
-      }
-
-
-    }
-
-    render() {
-      console.log('the props for this component: ', this.props);
-
-      return <li className={this.state.currentClass} onClick={() => { this.toggle(); }}>
-        <div>First Name: {this.props.firstName}</div>
-        <div>Last Name: {this.props.lastName}</div>
-        <div>Age: {this.props.age}</div>
-      </li>
-    }
-
-  }
-
 
   class AppComponent extends React.Component {
 
@@ -84,7 +41,7 @@
 
       var theListItemComponents = data.map((person) => {
         console.log('what is this?', this.state);
-        return <PersonComponent key={person.id} firstName={person.firstName} lastName={person.lastName} age={person.age} />;
+        return <MyPersonApp.PersonComponent key={person.id} firstName={person.firstName} lastName={person.lastName} age={person.age} />;
       });
 
       console.log('what is in that variable?', theListItemComponents);
