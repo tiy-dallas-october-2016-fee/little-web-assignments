@@ -17,6 +17,7 @@ window.SW = window.SW || {};
     render() {
       console.log('AppComponent.render');
       return <div>
+        <SW.InputComponent />
         <SW.PlanetListComponent />
       </div>;
     }

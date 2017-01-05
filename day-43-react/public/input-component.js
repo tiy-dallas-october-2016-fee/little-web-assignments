@@ -11,44 +11,49 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 window.SW = window.SW || {};
 
 (function () {
+  var InputComponent = function (_React$Component) {
+    _inherits(InputComponent, _React$Component);
 
-  var mountNode = document.querySelector('#react-root');
+    function InputComponent() {
+      _classCallCheck(this, InputComponent);
 
-  var AppComponent = function (_React$Component) {
-    _inherits(AppComponent, _React$Component);
-
-    function AppComponent() {
-      _classCallCheck(this, AppComponent);
-
-      return _possibleConstructorReturn(this, (AppComponent.__proto__ || Object.getPrototypeOf(AppComponent)).apply(this, arguments));
+      return _possibleConstructorReturn(this, (InputComponent.__proto__ || Object.getPrototypeOf(InputComponent)).apply(this, arguments));
     }
 
-    _createClass(AppComponent, [{
-      key: 'componentDidMount',
-      value: function componentDidMount() {
-        console.log('AppComponent.componentDidMount');
-      }
-    }, {
-      key: 'componentWillUnmount',
-      value: function componentWillUnmount() {
-        console.log('AppComponent.componentWillUnmount');
+    _createClass(InputComponent, [{
+      key: 'keyUpHappening',
+      value: function keyUpHappening(evt) {
+        console.log('key up happening', evt.keyCode);
+
+        if (evt.keyCode === 13) {
+          $.ajax({
+            url: 'https://api.github.com/search/users?q=' + this.myInput.value
+          }).done(function (data) {
+            console.log('github data?', data);
+          });
+        }
       }
     }, {
       key: 'render',
       value: function render() {
-        console.log('AppComponent.render');
+        var _this2 = this;
+
         return React.createElement(
           'div',
           null,
-          React.createElement(SW.InputComponent, null),
-          React.createElement(SW.PlanetListComponent, null)
+          'Yo, input goes here',
+          React.createElement('input', { onKeyUp: function onKeyUp(evt) {
+              _this2.keyUpHappening(evt);
+            }, ref: function ref(input) {
+              _this2.myInput = input;
+            } })
         );
       }
     }]);
 
-    return AppComponent;
+    return InputComponent;
   }(React.Component);
 
-  ReactDOM.render(React.createElement(AppComponent, null), mountNode);
+  SW.InputComponent = InputComponent;
 })();
-//# sourceMappingURL=script.js.map
+//# sourceMappingURL=input-component.js.map

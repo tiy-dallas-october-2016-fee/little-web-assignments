@@ -30,7 +30,7 @@ window.SW = window.SW || {};
         currentClass += ' on';
 
         extraInfo = <div>
-          <div>Climage: {this.props.planet.climate}</div>
+          <div>Climate: {this.props.planet.climate}</div>
           <div>Created: {this.props.planet.created}</div>
         </div>
       }

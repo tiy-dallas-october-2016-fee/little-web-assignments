@@ -51,7 +51,7 @@ window.SW = window.SW || {};
             React.createElement(
               'div',
               null,
-              'Climage: ',
+              'Climate: ',
               this.props.planet.climate
             ),
             React.createElement(
