@@ -1,0 +1,5 @@
+.create-category, .add-item-to-category {
+  border: solid 1px #000;
+  margin: 20px 0;
+  padding: 20px;
+}
