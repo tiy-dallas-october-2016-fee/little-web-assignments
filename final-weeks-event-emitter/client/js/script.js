@@ -15,7 +15,6 @@ if (window.EE === undefined) { window.EE = {}; }
         <p>This is an example that uses an event emitter to keep multiple components in sync, without having to actually connect them explicitly.</p>
 
         <EE.ListOfThingsComponent />
-        <EE.CounterComponent />
 
         <footer><EE.CounterComponent /></footer>
       </div>;

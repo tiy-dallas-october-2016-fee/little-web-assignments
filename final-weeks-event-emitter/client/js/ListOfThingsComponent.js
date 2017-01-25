@@ -30,6 +30,12 @@ if (window.EE === undefined) { window.EE = {}; }
     }
 
     render() {
+
+      var counter;
+      if (this.state.items.length < 4) {
+        counter = <EE.CounterComponent />
+      }
+
       return <div>
 
         <input
@@ -42,6 +48,8 @@ if (window.EE === undefined) { window.EE = {}; }
             return <li key={index} onClick={() => { this.removeAtIndex(index); }}>{x}</li>
           })}
         </ul>
+
+        {counter}
 
       </div>;
     }

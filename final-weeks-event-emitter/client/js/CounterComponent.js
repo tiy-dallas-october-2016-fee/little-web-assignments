@@ -12,12 +12,20 @@ if (window.EE === undefined) { window.EE = {}; }
     }
 
     componentDidMount() {
-      EE.Data.emitter.on('changed', () => {
+
+      this.changedCallback = () => {
         console.log('updating!');
         this.setState({
           count: EE.Data.getItems().length
         })
-      });
+      };
+
+      EE.Data.emitter.on('changed', this.changedCallback);
+    }
+
+    componentWillUnmount() {
+      console.log('unmounting');
+      EE.Data.emitter.off('changed', this.changedCallback);
     }
 
     render() {

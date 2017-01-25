@@ -55,6 +55,11 @@ if (window.EE === undefined) {
       value: function render() {
         var _this3 = this;
 
+        var counter;
+        if (this.state.items.length < 4) {
+          counter = React.createElement(EE.CounterComponent, null);
+        }
+
         return React.createElement(
           'div',
           null,
@@ -78,7 +83,8 @@ if (window.EE === undefined) {
                 x
               );
             })
-          )
+          ),
+          counter
         );
       }
     }]);

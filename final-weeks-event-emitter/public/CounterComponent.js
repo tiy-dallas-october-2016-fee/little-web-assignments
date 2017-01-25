@@ -32,12 +32,20 @@ if (window.EE === undefined) {
       value: function componentDidMount() {
         var _this2 = this;
 
-        EE.Data.emitter.on('changed', function () {
+        this.changedCallback = function () {
           console.log('updating!');
           _this2.setState({
             count: EE.Data.getItems().length
           });
-        });
+        };
+
+        EE.Data.emitter.on('changed', this.changedCallback);
+      }
+    }, {
+      key: 'componentWillUnmount',
+      value: function componentWillUnmount() {
+        console.log('unmounting');
+        EE.Data.emitter.off('changed', this.changedCallback);
       }
     }, {
       key: 'render',

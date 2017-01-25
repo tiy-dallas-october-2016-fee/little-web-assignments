@@ -47,7 +47,6 @@ if (window.EE === undefined) {
             'This is an example that uses an event emitter to keep multiple components in sync, without having to actually connect them explicitly.'
           ),
           React.createElement(EE.ListOfThingsComponent, null),
-          React.createElement(EE.CounterComponent, null),
           React.createElement(
             'footer',
             null,
