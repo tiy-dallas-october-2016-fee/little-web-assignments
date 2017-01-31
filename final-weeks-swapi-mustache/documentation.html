@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <section class="people-api">
+
+      <p>Url: http://swapi.co/api/people</p>
+
+      <p>Paramete example: ibu=10,50 - This return blah blah blah</p>
+
+      <div class="results">
+      </div>
+
+      <script type="text/html" id="people-api-template">
+        <div>
+          <ul>
+          {{#results}}
+            <li>{{name}} (gender: {{gender}}
+              <h3>Starships</h3>
+              <ol>
+                {{#starships}}
+                  <li>{{.}}</li>
+                {{/starships}}
+              </ol>
+            </li>
+          {{/results}}
+        </ul>
+        </div>
+      </script>
+
+    </section>
+
+    <section class="people-api-2">
+
+      <p>Url: http://swapi.co/api/people?name=luke</p>
+
+      <p>Paramete example: ibu=10,50 - This return blah blah blah</p>
+
+      <div class="results">
+      </div>
+
+    </section>
+
+
+    <section class="planet-api">
+
+      <p>Url: http://swapi.co/api/planets</p>
+
+      <div class="results">
+      </div>
+
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+
+    <script src="documentation.js"></script>
+  </body>
+</html>
