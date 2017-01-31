@@ -46,3 +46,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+#output li {
+	background-color: #EEE;
+	border: solid 1px #DDD;
+	margin: 20px;
+}
+
+#output img {
+	max-width: 100px;
+}
