@@ -45,7 +45,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-p {
-  color: red; }
+body {
+  padding: 20px; }
+
+h2 {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.4em;
+  font-weight: bold; }
+
+ul > li {
+  margin: 20px 0; }
+
+ol {
+  border: solid 1px #000;
+  max-width: 50%; }
 
 /*# sourceMappingURL=style.css.map */

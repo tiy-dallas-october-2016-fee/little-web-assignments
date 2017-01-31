@@ -24,6 +24,7 @@ if (window.SWAPI === undefined) { window.SWAPI = {}; }
         list = <ul>
           {this.state.apiData.results.map((person, index) => {
             return <li key={index}>{person.name} (gender: {person.gender})
+              <p>Eye color: {person.eye_color}</p>
               <h3>Starships</h3>
               <ol>
                 {person.starships.map((ship, index) => {
@@ -36,7 +37,7 @@ if (window.SWAPI === undefined) { window.SWAPI = {}; }
       }
 
 
-      return <div>
+      return <div className="example">
         <h2>Example 1:</h2>
 
         <p>This is for whatever</p>

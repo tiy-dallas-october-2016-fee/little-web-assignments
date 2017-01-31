@@ -54,6 +54,12 @@ if (window.SWAPI === undefined) {
                 person.gender,
                 ')',
                 React.createElement(
+                  'p',
+                  null,
+                  'Eye color: ',
+                  person.eye_color
+                ),
+                React.createElement(
                   'h3',
                   null,
                   'Starships'
@@ -76,7 +82,7 @@ if (window.SWAPI === undefined) {
 
         return React.createElement(
           'div',
-          null,
+          { className: 'example' },
           React.createElement(
             'h2',
             null,
