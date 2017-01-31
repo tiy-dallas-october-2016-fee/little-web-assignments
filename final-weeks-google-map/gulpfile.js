@@ -40,6 +40,8 @@ gulp.task('start', function () {
   nodemon({
     script: './server/server.js',
     ext: 'js',
-    env: { 'NODE_ENV': 'development' }
+    env: {
+      'NODE_ENV': 'development'
+    }
   })
 });

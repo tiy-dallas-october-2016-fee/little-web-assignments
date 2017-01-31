@@ -12,37 +12,113 @@ var mountNode = document.querySelector('#react-root');
 
 //
 
+var Map = function (_React$Component) {
+  _inherits(Map, _React$Component);
 
-var AppComponent = function (_React$Component) {
-  _inherits(AppComponent, _React$Component);
+  function Map() {
+    _classCallCheck(this, Map);
 
-  function AppComponent() {
-    _classCallCheck(this, AppComponent);
-
-    return _possibleConstructorReturn(this, (AppComponent.__proto__ || Object.getPrototypeOf(AppComponent)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).apply(this, arguments));
   }
 
-  _createClass(AppComponent, [{
+  _createClass(Map, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('this map', this.map);
+      console.log('Map componentDidMount');
       this.googleMap = new google.maps.Map(this.map, {
         center: { lat: -34.397, lng: 150.644 },
-        zoom: 10
+        zoom: 8
+      });
+
+      var marker = new google.maps.Marker({
+        position: { lat: -34.397, lng: 150.644 },
+        map: this.googleMap,
+        title: 'Hello World!'
+      });
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      var _this2 = this;
+
+      console.log('Map componentWillUpdate', this.props);
+      if (this.props.data === undefined) {
+        console.log('Map props', this.props);
+        return;
+      }
+      this.props.data.locations.forEach(function (loc) {
+        console.log('loc', loc);
+        var marker = new google.maps.Marker({
+          position: { lat: loc.lat, lng: loc.lng },
+          map: _this2.googleMap,
+          title: 'Hello World!'
+        });
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
+      console.log('Map render');
+      return React.createElement(
+        'div',
+        null,
+        React.createElement('div', { ref: function ref(map) {
+            _this3.map = map;
+          }, style: { width: '100%', height: '400px' } })
+      );
+    }
+  }]);
+
+  return Map;
+}(React.Component);
+
+var AppComponent = function (_React$Component2) {
+  _inherits(AppComponent, _React$Component2);
+
+  function AppComponent() {
+    _classCallCheck(this, AppComponent);
+
+    var _this4 = _possibleConstructorReturn(this, (AppComponent.__proto__ || Object.getPrototypeOf(AppComponent)).call(this));
+
+    _this4.state = {
+      apiResult: {
+        locations: []
+      }
+    };
+    return _this4;
+  }
+
+  _createClass(AppComponent, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this5 = this;
+
+      console.log('AppComponent componentDidMount');
+
+      $.ajax({
+        url: '/api/locations'
+      }).done(function (data) {
+        console.log('data!', data);
+        _this5.setState({
+          apiResult: data
+        });
+      });
+    }
+  }, {
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate() {
+      console.log('AppComponent updating');
+    }
+  }, {
+    key: 'render',
+    value: function render() {
       return React.createElement(
         'div',
         null,
         'React works!',
-        React.createElement('div', { ref: function ref(map) {
-            _this2.map = map;
-          }, style: { width: '100%', height: '400px' } })
+        React.createElement(Map, { data: this.state.apiResult })
       );
     }
   }]);
