@@ -53,7 +53,9 @@ class GithubApiSampleComponent extends React.Component {
       <button onClick={() => this.clicky()}>load data</button>
 
       <ul>
-        {this.state.apiResult.results.map((char) => { return <li key={char.url}>{char.name}</li>; })}
+        {this.state.apiResult.results.map((char) => {
+          return <li key={char.url}>{char.name}</li>;
+        })}
       </ul>
     </div>
   }
