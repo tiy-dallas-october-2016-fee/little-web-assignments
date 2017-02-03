@@ -15,8 +15,15 @@ if (window.R === undefined) {
   var router = React.createElement(
     Router,
     { history: ReactRouter.hashHistory },
-    React.createElement(Route, { path: "/", component: R.ListOfThingsComponent }),
-    React.createElement(Route, { path: "/detail/:id", component: R.DetailViewOfThingComponent })
+    React.createElement(Route, { path: "/",
+      component: R.ListOfThingsComponent,
+      onEnter: R.ListOfThingsComponent.willTransitionTo,
+      onLeave: R.ListOfThingsComponent.willTransitionFrom }),
+    React.createElement(Route, { path: "/detail/:id",
+      component: R.DetailViewOfThingComponent,
+      onEnter: R.DetailViewOfThingComponent.willTransitionTo,
+      onLeave: R.DetailViewOfThingComponent.willTransitionFrom
+    })
   );
 
   ReactDOM.render(router, mountNode);

@@ -11,6 +11,14 @@ if (window.R === undefined) { window.R = {}; }
       }
     }
 
+    static willTransitionTo(transition, replaceWith) {
+      console.log('willTransitionTo ListOfThingsComponent', transition, replaceWith);
+    }
+
+    static willTransitionFrom() {
+      console.log('willTransitionFrom ListOfThingsComponent', arguments);
+    }
+
     componentDidMount() {
       this.setState({
         things: R.Data.things

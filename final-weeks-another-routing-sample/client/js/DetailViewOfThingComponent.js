@@ -4,6 +4,14 @@ if (window.R === undefined) { window.R = {}; }
 
   class DetailViewOfThingComponent extends React.Component {
 
+    static willTransitionTo(transition, replaceWith) {
+      console.log('willTransitionTo DetailViewOfThingComponent', transition, replaceWith);
+    }
+
+    static willTransitionFrom() {
+      console.log('willTransitionFrom DetailViewOfThingComponent', arguments);
+    }
+
     componentDidMount() {
       console.log('componentDidMount', this.props.params.id);
 

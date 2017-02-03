@@ -69,6 +69,16 @@ if (window.R === undefined) {
           )
         );
       }
+    }], [{
+      key: 'willTransitionTo',
+      value: function willTransitionTo(transition, replaceWith) {
+        console.log('willTransitionTo DetailViewOfThingComponent', transition, replaceWith);
+      }
+    }, {
+      key: 'willTransitionFrom',
+      value: function willTransitionFrom() {
+        console.log('willTransitionFrom DetailViewOfThingComponent', arguments);
+      }
     }]);
 
     return DetailViewOfThingComponent;
